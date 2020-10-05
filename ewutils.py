@@ -858,27 +858,27 @@ def pushupServerHunger(id_server = None):
 			databaseClose(conn_info)
 
 """ Reduce inebriation for every player in the server. """
-def pushdownServerInebriation(id_server = None):
-	if id_server != None:
-		try:
-			conn_info = databaseConnect()
-			conn = conn_info.get('conn')
-			cursor = conn.cursor();
+#def pushdownServerInebriation(id_server = None):
+	#if id_server != None:
+		#try:
+			#conn_info = databaseConnect()
+			#conn = conn_info.get('conn')
+			#cursor = conn.cursor();
 
 			# Save data
-			cursor.execute("UPDATE users SET {inebriation} = {inebriation} - {tick} WHERE id_server = %s AND {inebriation} > {limit}".format(
-				inebriation = ewcfg.col_inebriation,
-				tick = ewcfg.inebriation_pertick,
-				limit = 0
-			), (
-				id_server,
-			))
+			#cursor.execute("UPDATE users SET {inebriation} = {inebriation} - {tick} WHERE id_server = %s AND {inebriation} > {limit}".format(
+				#inebriation = ewcfg.col_inebriation,
+				#tick = ewcfg.inebriation_pertick,
+				#limit = 0
+			#), (
+				#id_server,
+			#))
 
-			conn.commit()
-		finally:
+			#conn.commit()
+		#finally:
 			# Clean up the database handles.
-			cursor.close()
-			databaseClose(conn_info)
+			#cursor.close()
+			#databaseClose(conn_info)
 
 """
 	Coroutine that continually calls burnSlimes; is called once per server, and not just once globally
