@@ -473,7 +473,7 @@ async def mine(cmd):
 			if has_pickaxe == True:
 				mining_yield *= 2
 			if user_data.life_state == ewcfg.life_state_juvenile:
-				mining_yield *= 2
+				mining_yield *= 4.1
 
 			#trauma = ewcfg.trauma_map.get(user_data.trauma)
 			#if trauma != None and trauma.trauma_class == ewcfg.trauma_class_slimegain:
